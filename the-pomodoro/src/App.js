@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  //return SearchRecipe();
   //return Header();
   return SignUp();
   //return Login();
@@ -80,4 +81,15 @@ function Header(){
 		</div>
   );
 }
+
+function SearchRecipe(){
+  return (
+    <div id="search">
+    <form>
+      <div className="input"><input type="text" placeholder="Receita ou ingredientes"></input></div>
+      </form>
+    </div>
+  )
+}
+
 export default App;
