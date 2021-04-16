@@ -10,10 +10,13 @@ export default () => {
     
                 <div className="label">Password</div>
                 <div className="input"><input type="text"></input></div>
+
+                <div className="label">Confirmação da password</div>
+                <div className="input"><input type="text"></input></div>
     
                 <div className="link"><a>Ainda não se registou? Clique aqui</a></div>
     
-                <div className="button"><input type="submit" value="Sign In"></input></div>
+                <div className="button"><input type="submit" value="Sign Up"></input></div>
             </form>
         </div>
     );

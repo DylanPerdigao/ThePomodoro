@@ -17,11 +17,9 @@ export default () => {
       <Header/>
       <content>
         <Switch id="main">
-        <Route path="/" component={home} />
-        <Route path="/signin" component={SignIn}>
-        </Route>
-        <Route path="/signup" component={SignUp}>
-        </Route>
+          <Route exact path="/" component={home} />
+          <Route exact path="/signin" component={SignIn} />
+          <Route exact path="/signup" component={SignUp} />
         </Switch>
       </content>
     </>
