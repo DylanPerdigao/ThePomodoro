@@ -2,9 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  //return SearchRecipe();
+  return SearchRecipe();
   //return Header();
-  return SignUp();
+  //return SignUp();
   //return Login();
 
   return (
@@ -86,7 +86,8 @@ function SearchRecipe(){
   return (
     <div id="search">
     <form>
-      <div className="input"><input type="text" placeholder="Receita ou ingredientes"></input></div>
+      <div className="label">Procurar receita por ingredientes</div>
+      <div className="input"><input type="text" placeholder="Nome da receita ou dos ingredientes"></input></div>
       </form>
     </div>
   )
