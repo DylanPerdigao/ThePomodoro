@@ -1,4 +1,4 @@
-form{
+#login{
 	margin:auto;
 
 	width: 40%;
@@ -8,4 +8,24 @@ form{
 	background: linear-gradient(180deg, #FF1414 0%, rgba(255, 168, 39, 0.65) 0.01%, rgba(255, 255, 255, 0) 100%), #FF4141;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
+}
+
+#login .title{
+	text-align: center;
+}
+
+#login .label{
+	text-align: center;
+}
+
+#login .input{
+	text-align: center;
+}
+
+#login .link{
+	text-align: center;
+}
+
+#login .button{
+	text-align: center;
 }
