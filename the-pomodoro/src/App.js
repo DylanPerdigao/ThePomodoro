@@ -1,6 +1,31 @@
 import logo from './logo.svg';
+import { Switch, Route, useLocation, Link } from 'react-router-dom';
+import Header from './components/Header'
+import SignIn from './components/signIn/SignIn'
+import SignUp from './components/signIn/SignIn'
 import './App.css';
 
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default () => {
+
+  return (
+    <>
+      <Header/>
+      <content>
+        <Switch id="main">
+        {/*<Route path="/" component={home} /> */}
+        <Route path="/signin" component={SignIn}>
+        </Route>
+        <Route path="/signup" component={SignUp}>
+        </Route>
+        </Switch>
+      </content>
+    </>
+  );
+};
+
+/*
 function App() {
   //return Header();
   return SignUp();
@@ -25,59 +50,4 @@ function App() {
     </div>
   );
 }
-
-function SignIn(){
-  return (
-    <div id="sign">
-			<form>
-				<div className="title">The Pomodoro</div>
-
-				<div className="label">Username</div>
-				<div className="input"><input type="text"></input></div>
-	
-				<div className="label">Password</div>
-				<div className="input"><input type="text"></input></div>
-	
-				<div className="link"><a>Ainda não se registou? Clique aqui</a></div>
-	
-				<div className="button"><input type="submit" value="Sign In"></input></div>
-			</form>
-		</div>
-  );
-}
-
-function SignUp(){
-  return (
-    <div id="sign">
-			<form>
-				<div className="title">The Pomodoro</div>
-
-				<div className="label">Username</div>
-				<div className="input"><input type="text"></input></div>
-	
-				<div className="label">Password</div>
-				<div className="input"><input type="text"></input></div>
-
-				<div className="label">Confirmação da password</div>
-				<div className="input"><input type="text"></input></div>
-	
-				<div className="link"><a>Ainda não se registou? Clique aqui</a></div>
-	
-				<div className="button"><input type="submit" value="Sign Up"></input></div>
-			</form>
-		</div>
-  );
-}
-
-function Header(){
-  return (
-    <div id="navbar">
-			<ul>
-				<li style={{float:"left"}}><a>The Pomodoro</a></li>
-				<li><a>Perfil</a></li>
-				<li><input type="text" value="Pesquisar"></input></li>
-			</ul>
-		</div>
-  );
-}
-export default App;
+*/
