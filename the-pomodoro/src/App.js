@@ -5,6 +5,9 @@ import Header from './components/Header'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import './App.css';
+import './styles/Header.css';
+import './styles/Home.css';
+import './styles/Sign.css';
 
 
 // eslint-disable-next-line import/no-anonymous-default-export

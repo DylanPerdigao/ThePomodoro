@@ -1,0 +1,25 @@
+#search{
+    position: relative;
+    margin: 10% 25%;
+  
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+  
+    color: #FF6347;
+  }
+  
+  #search .input input{
+    position: relative;
+    width: 916px;
+    height: 70px;
+    left: 262px;
+    top: 324px;
+  
+    background: #FFFFFF;
+    border-radius: 10px;
+    border-style: none;
+  }

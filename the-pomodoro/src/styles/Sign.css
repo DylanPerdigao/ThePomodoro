@@ -1,0 +1,87 @@
+#sign{
+    position: absolute;
+    width: 30%;
+    height: 60%;
+    left: 35%;
+    top: 20%;
+    /*font*/
+    color: #FFFFFF;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.25vw;
+    line-height: 4vh;
+      /*background*/
+      background: linear-gradient(180deg, #FF1414 0%, rgba(255, 168, 39, 0.65) 0.01%, rgba(255, 255, 255, 0) 100%), #FF4141;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+  }
+  
+  #sign form{
+    padding: 5%;
+  }
+  
+  #sign .title{
+    position: relative;
+    margin: 10%;
+    text-align: center;
+    /*font*/
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2vw;
+  }
+  
+  #sign .label{
+      text-align: left;
+  }
+  
+  #sign .input{
+  
+      text-align: left;
+    height: 100%;
+    
+  }
+  #sign .input input{
+    width: 100%;
+    border-radius: 10px;
+    border-style: none;
+  }
+  
+  #sign .link{
+      text-align: left;
+     /*font*/
+    color: #001DB5;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1vw;
+    /*cursor*/
+    cursor:pointer;
+  }
+  
+  #sign .button{
+    padding-top: 10%;
+  }
+  #sign .button input{
+      position: relative;
+    width: 40%;
+    height: 20%;
+    left: 30%;
+    top: 10%;
+     /*color*/
+    background: #FABB98;
+    color: #FFFFFF;
+     /*border*/
+    border-radius: 10px;
+    border-style: none;
+     /*font*/
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5vw;
+    line-height: 5vh;
+     /*cursor*/
+    cursor:pointer;
+  }

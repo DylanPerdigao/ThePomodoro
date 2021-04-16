@@ -2,7 +2,7 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
     return (
-        <div id="navbar">
+        <div id="header">
             <ul>
                 <li style={{float:"left"}}><a>The Pomodoro</a></li>
                 <li><a>Perfil</a></li>
