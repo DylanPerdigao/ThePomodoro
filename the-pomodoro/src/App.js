@@ -27,8 +27,9 @@ export default () => {
 
 /*
 function App() {
+  return SearchRecipe();
   //return Header();
-  return SignUp();
+  //return SignUp();
   //return Login();
 
   return (
@@ -49,5 +50,71 @@ function App() {
       </header>
     </div>
   );
+}
+
+function SignIn(){
+  return (
+    <div id="sign">
+			<form>
+				<div className="title">The Pomodoro</div>
+
+				<div className="label">Username</div>
+				<div className="input"><input type="text"></input></div>
+	
+				<div className="label">Password</div>
+				<div className="input"><input type="text"></input></div>
+	
+				<div className="link"><a>Ainda não se registou? Clique aqui</a></div>
+	
+				<div className="button"><input type="submit" value="Sign In"></input></div>
+			</form>
+		</div>
+  );
+}
+
+function SignUp(){
+  return (
+    <div id="sign">
+			<form>
+				<div className="title">The Pomodoro</div>
+
+				<div className="label">Username</div>
+				<div className="input"><input type="text"></input></div>
+	
+				<div className="label">Password</div>
+				<div className="input"><input type="text"></input></div>
+
+				<div className="label">Confirmação da password</div>
+				<div className="input"><input type="text"></input></div>
+	
+				<div className="link"><a>Ainda não se registou? Clique aqui</a></div>
+	
+				<div className="button"><input type="submit" value="Sign Up"></input></div>
+			</form>
+		</div>
+  );
+}
+
+function Header(){
+  return (
+    <div id="navbar">
+			<ul>
+				<li style={{float:"left"}}><a>The Pomodoro</a></li>
+				<li><a>Perfil</a></li>
+				<li><input type="text" value="Pesquisar"></input></li>
+			</ul>
+		</div>
+  );
+}
+
+function SearchRecipe(){
+  return (
+    <div id="search">
+    <form>
+      <div className="label">Procurar receita por ingredientes</div>
+      <div className="input"><input type="text" placeholder="Nome da receita ou dos ingredientes"></input></div>
+      </form>
+    </div>
+  )
 }
 */
