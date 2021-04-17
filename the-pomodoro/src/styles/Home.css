@@ -1,13 +1,13 @@
 #home{
     margin: 10% 20%;
 }
-#search{
+#searchBar{
     width: 80%;
     height: 50%;
     color: #FF6347;
   }
   
-  #search input{
+  #searchBar input{
     margin: 1% 1%;
     width: 80%;
   

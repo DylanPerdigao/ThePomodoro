@@ -1,14 +1,19 @@
 import logo from './logo.svg';
 import { Switch, Route, useLocation, Link } from 'react-router-dom';
-import home from './pages/Home'
 import Header from './components/Header'
+import Home from './pages/Home'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
+import Search from './pages/Search'
+import Profile from './pages/Profile'
+import Publish from './pages/Publish'
 import './App.css';
 import './styles/Header.css';
 import './styles/Home.css';
 import './styles/Sign.css';
 import './styles/Post.css';
+import './styles/Profile.css';
+import './styles/Publish.css';
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -18,9 +23,12 @@ export default () => {
       <Header/>
       <content>
         <Switch id="main">
-          <Route exact path="/" component={home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/search" component={Profile} />
+          <Route exact path="/search" component={Publish} />
         </Switch>
       </content>
     </>
