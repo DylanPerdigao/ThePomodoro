@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import './Recipe.css';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {

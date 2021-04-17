@@ -1,20 +1,13 @@
-import { Switch, Route, useLocation, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header'
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Search from './pages/Search'
-import Recipe from './pages/Recipe'
-import Profile from './pages/Profile'
-import Publish from './pages/Publish'
+import Recipe from './pages/Recipe/Recipe'
+import Profile from './pages/Profile/Profile'
+import Publish from './pages/Publish/Publish'
 import './App.css';
-import './styles/Header.css';
-import './styles/Home.css';
-import './styles/Sign.css';
-import './styles/Post.css';
-import './styles/Recipe.css';
-import './styles/Profile.css';
-import './styles/Publish.css';
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
