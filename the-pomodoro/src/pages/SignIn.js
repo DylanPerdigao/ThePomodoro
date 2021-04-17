@@ -3,9 +3,16 @@ export default () => {
 
     const signin = () => {
         
-        fetch(`https://thepomodoro.herokuapp.com/login?username=${"teste"}&password=${"teste"}`, {
-            method: 'POST',
-            mode: 'no-cors',
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Basic dGVzdGU6dGVzdGU=");
+        myHeaders.append("Access-Control-Allow-Origin", "http://localhost:3000/");
+        myHeaders.append("Access-Control-Allow-Methods", "GET");
+        //myHeaders.append("Access-Control-Allow-Headers", "Basic dGVzdGU6dGVzdGU=");
+        
+
+        fetch('https://thepomodoro.herokuapp.com/login', {
+            method: 'GET',
+            headers: myHeaders,
             redirect: 'follow',
         })
         .then(response => response)

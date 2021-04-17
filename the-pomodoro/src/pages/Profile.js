@@ -2,6 +2,23 @@ import Post from './../components/Post'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
+
+    const myRecipes = {};
+
+    const myRecipesComponents = myRecipes.map( p => (
+        <Product 
+            key={'product-'+p.id}
+            id={p.id}
+            title={p.title}
+            description={p.description}
+            url={p.url}
+            votes= {p.votes}
+            submitterAvatarUrl={p.submitterAvatarUrl}
+            productImageUrl = {p.productImageUrl}
+            onVote = {this.handleProductUpVote}
+        />
+   ));
+
     return (
         <div id="profile">
             <div id="inner">
@@ -13,7 +30,7 @@ export default () => {
 
                 <h2>Minhas Receitas</h2>
                 <div className="myRecipes">
-                    <Post />
+                    {myRecipesComponents}
                 </div>
                 
 

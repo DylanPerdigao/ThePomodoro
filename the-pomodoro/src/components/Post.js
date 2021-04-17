@@ -9,7 +9,7 @@ export default () => {
                 <h3>AUTHOR</h3>
             </div>
             <div className="right">
-                <img className="postImg" src="logo512.png"></img>
+                <img className="postImg" alt="Recipe" src="logo512.png"></img>
                 <h3>LIKES</h3>
             </div>
         </button>
