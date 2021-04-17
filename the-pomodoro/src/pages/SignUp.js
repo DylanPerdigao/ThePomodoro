@@ -1,23 +1,35 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
+
+    const signin = () => {
+
+        fetch(`https://thepomodoro.herokuapp.com/login?username=${"teste"}&password=${"teste"}`, {
+            method: 'POST',
+            redirect: 'follow',
+        })
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => alert('Unable to reach API.'));
+    }
+
     return (
         <div id="sign">
-            <form>
-                <div className="title">The Pomodoro</div>
+            <div id="inner">
+                <h1>The Pomodoro</h1>
 
-                <div className="label">Username</div>
-                <div className="input"><input type="text"></input></div>
-    
-                <div className="label">Password</div>
-                <div className="input"><input type="text"></input></div>
+                <label>Username</label>
+                <input type="text"></input>
 
-                <div className="label">Confirmação da password</div>
-                <div className="input"><input type="text"></input></div>
-    
-                <div className="link"><a>Ainda não se registou? Clique aqui</a></div>
-    
-                <div className="button"><input type="submit" value="Sign Up"></input></div>
-            </form>
+                <label>Password</label>
+                <input type="password"></input>
+
+                <label>Confirmação da password</label>
+                <input type="password"></input>
+
+                <a href="/signin">Ainda não se registou? Clique aqui</a>
+
+                <button onClick={signin}> Sign Up</button>
+            </div>
         </div>
     );
 };
