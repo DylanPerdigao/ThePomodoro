@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Search from './pages/Search'
+import Recipe from './pages/Recipe'
 import Profile from './pages/Profile'
 import Publish from './pages/Publish'
 import './App.css';
@@ -12,6 +13,7 @@ import './styles/Header.css';
 import './styles/Home.css';
 import './styles/Sign.css';
 import './styles/Post.css';
+import './styles/Recipe.css';
 import './styles/Profile.css';
 import './styles/Publish.css';
 
@@ -27,6 +29,7 @@ export default () => {
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/search" component={Search} />
+          <Route exact path="/recipe" component={Recipe} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/publish" component={Publish} />
         </Switch>
