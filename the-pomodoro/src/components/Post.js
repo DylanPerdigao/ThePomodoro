@@ -1,11 +1,12 @@
 // eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+export default ( {id, name, description, image, rating} ) => {
+
     return (
         <button id="post">
             <div className="left">
-                <h1>NAME</h1>
-                <h2>Descrição</h2>
-                <p>Lorem Ipsum Dolor</p>
+                <h1>{name}</h1>
+                <h2>Description:</h2>
+                <p>{description}</p>
                 <h3>AUTHOR</h3>
             </div>
             <div className="right">
