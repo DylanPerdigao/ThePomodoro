@@ -51,10 +51,9 @@ label{
   width: 100%;
   /*font*/
   color: #001DB5;
-  font-family: Montserrat;
   font-style: normal;
   font-weight: 300;
-  font-size: 1vw;
+  font-size: 0.8em;
   /*cursor*/
   cursor:pointer;
 }

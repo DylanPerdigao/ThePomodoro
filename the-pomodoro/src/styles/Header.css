@@ -3,41 +3,105 @@
     /*background*/
     background-color: #FF6347;
     /*font*/
-    font-family: Montserrat;
     font-style: normal;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 25px;
     line-height: 39px;
 }
 
-#header ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+#header nav{
+    display: flex;
 }
 
-#header li {
-    float: right;
-}
-
-#header li a {
+#header nav a {
+    width: 200px;
+    margin: auto 0;
     display: block;
     color: white;
-    text-align: center;
-    padding: 14px 16px;
+    text-align: left;
+    padding: 5px 16px;
     text-decoration: none;
 }
 
-#header li a:hover{
-    color: #E8E2C4;
-    cursor:pointer;
+#header nav{
+    display: flex;
 }
 
-#header li input{
+#logo {
+    height: 0.8em;
+    margin: auto 2px auto 0;
+}
+
+#header nav a h2{
+    margin: 0px;
+    height: 25px;
+    
+    /*font*/
+    font-style: normal;
+    font-size: 25px;
+}
+
+#header nav a div h1{
+    margin: 0px;
+
+    /*font*/
+    font-style: normal;
+    font-size: 25px;
+}
+
+#header nav a div, #header nav div{
+    display: flex;
+}
+
+#header nav a:hover{
+    color: #E8E2C4;
+}
+
+#header nav input{
+    margin: auto;
     width: 100%;
+    max-width: 500px;
+    height: 2em;
     background: #FFFFFF;
     border-radius: 10px;
     border-style: none;
 
+}
+
+#header nav input::-webkit-input-placeholder {
+    text-align: center;
+}
+
+#header nav > div{
+    padding: 5px 16px;
+    width: 200px;
+}
+
+#header nav div a:first-child{
+    padding: 0px;
+    width: auto;
+    margin: auto auto auto 0px;
+}
+#header nav div a:last-child{
+    padding: 0px;
+    width: auto;
+    margin: auto 0px auto auto;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    #logo {
+        animation: logo-spin infinite 5s linear;
+    }
+    }
+    @keyframes logo-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    90% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(640deg);
+    }
 }

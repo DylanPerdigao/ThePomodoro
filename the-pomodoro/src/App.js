@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { Switch, Route, useLocation, Link } from 'react-router-dom';
 import Header from './components/Header'
 import Home from './pages/Home'
