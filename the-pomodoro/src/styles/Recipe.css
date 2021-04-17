@@ -1,0 +1,10 @@
+.recipeBox{
+    position: absolute;
+    width: 852px;
+    height: 563px;
+    left: 292px;
+    top: 319px;
+    
+    background: #FFFFFF;
+    border-radius: 40px;
+}
