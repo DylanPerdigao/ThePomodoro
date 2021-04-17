@@ -19,7 +19,7 @@ export default () => {
                 </div>
 
                 <label>Preparação</label>
-                <input type="textarea" placeholder="preparação"></input>
+                <textarea id="preparation" placeholder="preparação"></textarea>
 
                 <div class="horizontal">
                     <button>Publicar</button>
