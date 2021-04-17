@@ -7,11 +7,11 @@ const LikeButton = (props) =>{
 }
 
 function Favorite(props) {
-  return <img className="like" src="heart-filled.svg"></img>;
+  return <img className="like" src="star-filled.svg"></img>;
 }
 
 function NotFavorite(props) {
-  return <img className="like" src="heart.svg"></img>;
+  return <img className="like" src="star.svg"></img>;
 }
 
 export default ( {id, name, description, image, rating} ) => {
