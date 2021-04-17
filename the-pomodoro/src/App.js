@@ -21,7 +21,7 @@ export default () => {
   return (
     <>
       <Header/>
-      <content>
+      <div>
         <Switch id="main">
           <Route exact path="/" component={Home} />
           <Route exact path="/signin" component={SignIn} />
@@ -30,7 +30,7 @@ export default () => {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/publish" component={Publish} />
         </Switch>
-      </content>
+      </div>
     </>
   );
 };

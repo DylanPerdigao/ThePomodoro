@@ -1,16 +1,6 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
 
-    const signin = () => {
-
-        fetch(`https://thepomodoro.herokuapp.com/login?username=${"teste"}&password=${"teste"}`, {
-            method: 'POST',
-            redirect: 'follow',
-        })
-        .then(response => response.text())
-        .then(result => console.log(result))
-        .catch(error => alert('Unable to reach API.'));
-    }
 
     return (
         <div id="sign">
@@ -28,7 +18,7 @@ export default () => {
 
                 <a href="/signin">Ainda não se registou? Clique aqui</a>
 
-                <button onClick={signin}> Sign Up</button>
+                <button>Sign Up</button>
             </div>
         </div>
     );
