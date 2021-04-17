@@ -27,8 +27,8 @@ export default () => {
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/search" component={Search} />
-          <Route exact path="/search" component={Profile} />
-          <Route exact path="/search" component={Publish} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/publish" component={Publish} />
         </Switch>
       </content>
     </>

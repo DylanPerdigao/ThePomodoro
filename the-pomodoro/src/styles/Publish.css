@@ -1,0 +1,6 @@
+.horizontal{
+    display:flex;
+}
+.horizontal input{
+    width:33%;
+}
