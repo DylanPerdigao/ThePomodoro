@@ -8,6 +8,7 @@ import './App.css';
 import './styles/Header.css';
 import './styles/Home.css';
 import './styles/Sign.css';
+import './styles/Post.css';
 
 
 // eslint-disable-next-line import/no-anonymous-default-export

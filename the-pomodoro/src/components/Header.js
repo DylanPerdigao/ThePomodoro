@@ -6,7 +6,7 @@ export default () => {
             <ul>
                 <li style={{float:"left"}}><a>The Pomodoro</a></li>
                 <li><a>Perfil</a></li>
-                <li><input type="text" value="Pesquisar"></input></li>
+                <li><input type="text" placeholder="Pesquisar receita, ingrediente"></input></li>
             </ul>
         </div>
     );
