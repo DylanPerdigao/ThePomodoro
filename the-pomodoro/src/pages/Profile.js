@@ -39,7 +39,7 @@ export default () => {
             image={p.image}
             rating= {p.rating}
 
-            /*onClick = {window.location.href=`/recipe=${p.id}`}*/
+            onClick = { () => {window.location.href=`/recipe/:${p.id}`;}}
         />
    ));
 

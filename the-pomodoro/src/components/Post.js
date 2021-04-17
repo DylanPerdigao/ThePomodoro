@@ -1,22 +1,23 @@
 // eslint-disable-next-line import/no-anonymous-default-export
-const LikeButton = (props) =>{
-    if(props.isFavorite){
-        return <Favorite />
+export default ( {id, name, description, image, rating, onClick} ) => {
+
+    const LikeButton = (props) =>{
+        if(props.isFavorite){
+            return <Favorite />
+        }
+        return <NotFavorite />
     }
-    return <NotFavorite />
-}
+    
+    function Favorite(props) {
+      return <img className="like" alt = "star filled" src="star-filled.svg"></img>;
+    }
+    
+    function NotFavorite(props) {
+      return <img className="like" alt = "star" src="star.svg"></img>;
+    }
 
-function Favorite(props) {
-  return <img className="like" src="star-filled.svg"></img>;
-}
-
-function NotFavorite(props) {
-  return <img className="like" src="star.svg"></img>;
-}
-
-export default ( {id, name, description, image, rating} ) => {
     return (
-        <button id="post">
+        <button onClick = {onClick} id="post">
             <div className="left">
                 <h1>{name}</h1>
                 <h2>Description:</h2>
