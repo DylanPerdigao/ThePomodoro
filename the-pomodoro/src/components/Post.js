@@ -13,19 +13,18 @@ function Favorite(props) {
 function NotFavorite(props) {
   return <img className="like" src="heart.svg"></img>;
 }
-export default () => {
+
+export default ( {id, name, description, image, rating} ) => {
     return (
         <button id="post">
             <div className="left">
-                <h1>NAME</h1>
-                <h2>Descrição</h2>
-                <p>Lorem Ipsum Dolor</p>
+                <h1>{name}</h1>
+                <h2>Description:</h2>
+                <p>{description}</p>
+                <h3>AUTHOR</h3>
             </div>
             <div className="right">
-                <img className="postImg" src="logo512.png"></img>
-            </div>
-            <div>
-                <h3>AUTHOR</h3>
+                <img className="postImg" alt="Recipe" src="logo512.png"></img>
                 <h3>LIKES</h3>
                 <LikeButton isFavorite={false}/>
             </div>

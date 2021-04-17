@@ -23,7 +23,7 @@ export default () => {
 
                 <div class="horizontal">
                     <button>Publicar</button>
-                    <button>Voltar</button>
+                    <button onclick="window.location.href='/'">Voltar</button>
                 </div>
             </div>
         </div>
