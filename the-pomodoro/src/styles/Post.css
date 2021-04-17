@@ -1,6 +1,7 @@
 #post{
     display: flex;
-    margin: 5% 20%;
+    margin: 5% 10%;
+    padding: 5%;
     /*font*/
     color: #FFFFFF;
       font-family: Montserrat;
