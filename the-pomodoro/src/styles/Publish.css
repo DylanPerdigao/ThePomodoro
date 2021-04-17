@@ -1,6 +1,24 @@
 .horizontal{
+    width: 100%;
     display:flex;
 }
-.horizontal input{
-    width:33%;
+.horizontal>button{
+    margin: auto;
+    left: 0px !important;
+}
+
+#ingredients{
+    display: flex;
+}
+
+
+/*ingredient quantity*/
+#ingredients input:nth-child(2){
+    width: 5em;
+    margin: 0px 1em;
+}
+
+/*ingredient quantity*/
+#ingredients input:nth-child(2){
+    width: 5em;
 }

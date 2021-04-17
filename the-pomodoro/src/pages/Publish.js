@@ -12,7 +12,7 @@ export default () => {
                 <input type="text" placeholder="descrição"></input>
 
                 <label>Ingredientes</label>
-                <div class="honrizontal">
+                <div id="ingredients">
                     <input type="text" placeholder="nome"></input>
                     <input type="text" placeholder="quantidade"></input>
                     <input type="text" placeholder="unidade"></input>
@@ -22,8 +22,8 @@ export default () => {
                 <input type="textarea" placeholder="preparação"></input>
 
                 <div class="horizontal">
-                    <input type="submit" value="Publicar"></input>
-                    <input type="submit" value="Voltar"></input>
+                    <button>Publicar</button>
+                    <button>Voltar</button>
                 </div>
             </div>
         </div>

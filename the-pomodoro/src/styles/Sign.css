@@ -10,7 +10,7 @@
   color: #FFFFFF;
   font-style: normal;
   font-weight: 600;
-  font-size: 1.25vw;
+  font-size: 1.25em;
   line-height: 4vh;
 
   /*background*/
@@ -31,7 +31,7 @@
   color: #FFFFFF;
   font-style: normal;
   font-weight: 700;
-  font-size: 2vw;
+  font-size: 2em;
 }
 
 label{
@@ -64,7 +64,7 @@ label{
 
   position: relative;
   width: 40%;
-  height: 20%;
+  height: 1.5em;
   left: 30%;
   top: 10%;
     /*color*/
@@ -76,8 +76,7 @@ label{
     /*font*/
   font-style: normal;
   font-weight: bold;
-  font-size: 1.5vw;
-  line-height: 5vh;
+  font-size: 1em;
     /*cursor*/
   cursor: pointer;
 }

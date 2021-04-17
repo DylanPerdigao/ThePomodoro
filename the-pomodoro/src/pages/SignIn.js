@@ -2,13 +2,13 @@
 export default () => {
 
     const signin = () => {
-
+        
         fetch(`https://thepomodoro.herokuapp.com/login?username=${"teste"}&password=${"teste"}`, {
             method: 'POST',
-            mode: 'cors',
+            mode: 'no-cors',
             redirect: 'follow',
         })
-        .then(response => response.body)
+        .then(response => response)
         .then(result => console.log(result))
         .catch(error => {
             alert('Unable to reach API.');

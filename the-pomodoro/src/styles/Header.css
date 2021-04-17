@@ -81,6 +81,7 @@
     padding: 0px;
     width: auto;
     margin: auto auto auto 0px;
+    padding-right: 10px;
 }
 #header nav div a:last-child{
     padding: 0px;
