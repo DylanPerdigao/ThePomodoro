@@ -6,25 +6,24 @@ import './Publish.css';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
-    const state = {
+    const IngredientState = {
         "name": undefined,
         "quantity": undefined,
-        "unit": undefined
     };
-    const ingredients = [{
-        "name": "name",
-        "quantity": 10,
-        "unit": "dl"
-    }];
+    const ingredients = [];
 
-    function setName(e){state.name = e.target.value}
-    function setQuantity(e){state.quantity = e.target.value}
-    function setUnit(e){state.unit = e.target.value}
+    const recipe = {
+        "name": undefined,
+        "image": "",
+        "description": undefined,
+        "preparation": undefined,
+        "ingredients": ingredients
+    };
 
     function resetInputs(){
-        state.name = undefined;
-        state.quantity = undefined;
-        state.unit = undefined;
+        IngredientState.name = undefined;
+        IngredientState.quantity = undefined;
+        IngredientState.unit = undefined;
         document.getElementById("ingredientName").value="";
         document.getElementById("ingredientQuantity").value="";
         document.getElementById("ingredientUnit").value="";
@@ -36,23 +35,22 @@ export default () => {
         document.getElementById("ingredientQuantity").style.background="white";
         document.getElementById("ingredientUnit").style.background="white";
         var validInputs=3;
-        if(!state.name || !Number.isNaN(parseFloat(state.name))){
+        if(!IngredientState.name || !Number.isNaN(parseFloat(IngredientState.name))){
             document.getElementById("ingredientName").style.background="pink";
             validInputs--;
         }
-        if(!state.quantity || Number.isNaN(parseFloat(state.quantity))){
+        if(!IngredientState.quantity || Number.isNaN(parseFloat(IngredientState.quantity))){
             document.getElementById("ingredientQuantity").style.background="pink";
             validInputs--;
         }
-        if (!state.unit || !Number.isNaN(parseFloat(state.unit))){
+        if (!IngredientState.unit || !Number.isNaN(parseFloat(IngredientState.unit))){
             document.getElementById("ingredientUnit").style.background="pink";
             validInputs--;
         }
-        if(validInputs==3){
+        if(validInputs===3){
             ingredients.push({
-                "name": state.name,
-                "quantity": parseFloat(state.quantity.replace(',','.')),
-                "unit": state.unit
+                "name": IngredientState.name,
+                "quantity": parseFloat(IngredientState.quantity.replace(',','.'))+IngredientState.unit,
             });
             resetInputs();
             ReactDOM.render(<Ingredients />, document.getElementById('ingredientsList'));
@@ -64,6 +62,40 @@ export default () => {
         ingredients.splice(e.target.id.split("#")[1],1);
         ReactDOM.render(<Ingredients />, document.getElementById('ingredientsList'));
     }
+
+    function publish(e){
+        var myHeaders = new Headers();
+        myHeaders.append("x-acess-token", localStorage.getItem("token"));
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify(recipe);
+        console.log(raw);
+
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+
+        fetch("https://thepomodoro.herokuapp.com/recipe", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            if(result.message==="sucess"){
+                window.location.href='/';
+            }else{
+                alert("Preencha todos os campos corretamente")
+            }}
+        )
+        .catch(error => alert(error.message));
+        }
+
+    function setRecipeName(e){recipe.name= e.target.value}
+    function setRecipeDescription(e){recipe.description= e.target.value}
+    function setRecipePreparation(e){recipe.preparation= e.target.value}
+    function setIngredientName(e){IngredientState.name = e.target.value}
+    function setIngredientQuantity(e){IngredientState.quantity = e.target.value}
+    function setIngredientUnit(e){IngredientState.unit = e.target.value}
 
     const Ingredients = (props) => {
         return (
@@ -87,25 +119,25 @@ export default () => {
                 <h1>Publicar Receita</h1>
 
                 <label>Nome</label>
-                <input type="text" placeholder="nome"/>
+                <input type="text" placeholder="nome" value={recipe.name} onChange={setRecipeName}/>
 
                 <label>Descrição</label>
-                <input type="text" placeholder="descrição"/>
+                <input type="text" placeholder="descrição" value={recipe.description} onChange={setRecipeDescription}/>
 
                 <label>Ingredientes</label>
                 <div id="ingredients">
-                    <input id="ingredientName" type="text" placeholder="nome" value={state.name} onChange={setName}/>
-                    <input id="ingredientQuantity" type="text" placeholder="quantidade" value={state.quantity} onChange={setQuantity}/>
-                    <input id="ingredientUnit" type="text" placeholder="unidade" value={state.quantity} onChange={setUnit}/>
+                    <input id="ingredientName" type="text" placeholder="nome" value={IngredientState.name} onChange={setIngredientName}/>
+                    <input id="ingredientQuantity" type="text" placeholder="quantidade" value={IngredientState.quantity} onChange={setIngredientQuantity}/>
+                    <input id="ingredientUnit" type="text" placeholder="unidade" value={IngredientState.quantity} onChange={setIngredientUnit}/>
                 </div>
                 <button onClick={addIngredient}>Adicionar</button>
                 <Ingredients />
 
                 <label>Preparação</label>
-                <textarea id="preparation" placeholder="preparação"/>
+                <textarea id="preparation" placeholder="preparação" value={recipe.preparation} onChange={setRecipePreparation}/>
 
                 <div className="horizontal">
-                    <button>Publicar</button>
+                    <button onClick={publish}>Publicar</button>
                     <button onClick={()=>(window.location.href='/')}>Voltar</button>
                 </div>
             </div>
