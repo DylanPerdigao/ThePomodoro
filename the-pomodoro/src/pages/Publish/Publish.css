@@ -29,3 +29,9 @@
     height: 10em;
     border-radius: 10px;
 }
+
+.removeIngredient{
+    background-color: crimson;
+    color: white;
+    width: 5%;
+}

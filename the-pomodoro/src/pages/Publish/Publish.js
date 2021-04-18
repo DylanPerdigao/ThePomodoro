@@ -6,9 +6,9 @@ import '../../styles/Sign.css';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
     const state = {
-        "name": null,
-        "quantity": null,
-        "unit": null
+        "name": undefined,
+        "quantity": undefined,
+        "unit": undefined
     };
     const ingredients = [{
         "name": "name",
@@ -20,17 +20,26 @@ export default () => {
     function setQuantity(e){state.quantity = e.target.value}
     function setUnit(e){state.unit = e.target.value}
 
-    function addIngredient(e){
-        e.preventDefault();
-        ingredients.push({
-            "name": state.name,
-            "quantity": state.quantity,
-            "unit": state.unit
-        });
+    function resetInputs(){
+        state.name = undefined;
+        state.quantity = undefined;
+        state.unit = undefined;
         document.getElementById("ingredientName").value="";
         document.getElementById("ingredientQuantity").value="";
         document.getElementById("ingredientUnit").value="";
-        ReactDOM.render(<Ingredients />, document.getElementById('ingredientsList'));
+    }
+
+    function addIngredient(e){
+        e.preventDefault();
+        if(state.name != undefined && state.quantity != undefined && state.unit != undefined){
+            ingredients.push({
+                "name": state.name,
+                "quantity": state.quantity,
+                "unit": state.unit
+            });
+            resetInputs();
+            ReactDOM.render(<Ingredients />, document.getElementById('ingredientsList'));
+        }
     }
 
     function removeIngredient(e){
@@ -44,9 +53,9 @@ export default () => {
             <div id="ingredientsList">
             <ul>
                 {ingredients.map( (ing,index) => (
-                    <li>
+                    <li key={index}>
                         {ing.quantity}{ing.unit} {ing.name}
-                        <button id={"removeIngredient#"+index} className="removeIngredient" onClick={removeIngredient}>Remover</button>
+                        <button id={"removeIngredient#"+index} className="removeIngredient" onClick={removeIngredient}>X</button>
                     </li>
                 ))}
             </ul>
@@ -80,7 +89,7 @@ export default () => {
 
                 <div className="horizontal">
                     <button>Publicar</button>
-                    <button onClick="window.location.href='/'">Voltar</button>
+                    <button onClick={()=>(window.location.href='/')}>Voltar</button>
                 </div>
             </div>
         </div>
