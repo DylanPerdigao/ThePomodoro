@@ -23,7 +23,7 @@ export default () => {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/recipe/:id" component={Recipe} />
-          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/profile/:username" component={Profile} />
           <Route exact path="/publish" component={Publish} />
         </Switch>
       </div>
