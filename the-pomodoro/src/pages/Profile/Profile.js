@@ -20,7 +20,8 @@ export default () => {
     useEffect(() => {
         if (state.loading === true && state.error === false) {
         
-            fetch('http://127.0.0.1:5000/user', {
+            //fetch('http://127.0.0.1:5000/user', {     //local
+            fetch('https://thepomodoro.herokuapp.com/user', {
                 method: 'GET',
                 redirect: 'follow',
                 headers: {

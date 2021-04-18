@@ -18,7 +18,8 @@ export default () => {
 
     const signin = () => {
 
-        fetch('http://127.0.0.1:5000/login', {
+        // fetch('http://127.0.0.1:5000/login', {   //local
+        fetch('https://thepomodoro.herokuapp.com/login', {
             method: 'GET',
             headers: {
                 "Authorization" : "Basic "+base64.encode(`${state.username}:${state.password}`),
@@ -29,11 +30,12 @@ export default () => {
         .then(response => response.json())
         .then(result => {
             localStorage.setItem("token", result.token);
+            localStorage.setItem("logged", true);
             window.location.href = `/profile/${state.username}`
         })
         .catch(error => {
-            alert('Unable to reach API.');
-            console.log(error);
+            alert(error.message);
+            //console.log(error);
         });
 
         //console.log(localStorage.getItem("token"))
