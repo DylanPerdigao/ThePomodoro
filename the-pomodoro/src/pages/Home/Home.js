@@ -4,12 +4,19 @@ import './Home.css';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
-
     const [state, setState] = useState ({
+        search: undefined,
         loading: true,
         error: false,
         popularRecipesComponents: null
     });
+    function setSearch(e){state.search = e.target.value}
+    function search(e){
+      if(e.keyCode == 13){
+        state.search=document.getElementById("mySearch").value;
+        console.log(state.search);
+      }
+    }
 
     useEffect(() => {
         if (state.loading === true && state.error === false) {
@@ -66,7 +73,7 @@ export default () => {
         <div id="home">
         <div id="searchBar">
             <label>Procurar receita por ingredientes</label>
-            <input type="text" placeholder="Nome da receita ou dos ingredientes"></input>
+            <input id="mySearch" type="text" placeholder="Nome da receita ou dos ingredientes" value={state.search} onClick={setSearch} onKeyUp={search}></input>
         </div>
         <div id="feed">
             <label>Receitas Populares</label>
