@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './Publish.css';
 import '../../styles/Sign.css';
+import './Publish.css';
+
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
@@ -53,8 +54,8 @@ export default () => {
             <div id="ingredientsList">
             <ul>
                 {ingredients.map( (ing,index) => (
-                    <li key={index}>
-                        {ing.quantity}{ing.unit} {ing.name}
+                    <li key={index} id="ingredientListItem">
+                        <label id="ingredientItem">{ing.quantity}{ing.unit} {ing.name}</label>
                         <button id={"removeIngredient#"+index} className="removeIngredient" onClick={removeIngredient}>X</button>
                     </li>
                 ))}
