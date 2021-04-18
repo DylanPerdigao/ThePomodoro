@@ -1,4 +1,5 @@
-import Post from './../components/Post'
+import Post from '../../components/Post'
+import './Home.css';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {

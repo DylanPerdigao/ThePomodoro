@@ -1,4 +1,6 @@
-import Post from './../components/Post'
+import Post from '../../components/Post'
+
+import './Profile.css';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
@@ -39,7 +41,7 @@ export default () => {
             image={p.image}
             rating= {p.rating}
 
-            onClick = { () => {window.location.href=`/recipe/:${p.id}`;}}
+            onClick = { () => {window.location.href=`/recipe/${p.id}`;}}
         />
    ));
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './Publish.css';
+import '../../styles/Sign.css';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
