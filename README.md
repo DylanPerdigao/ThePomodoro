@@ -5,7 +5,7 @@
 #### Setup do postgres no docker
 ```shell
 docker pull postgres 
-docker run -d -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=postgres postgres 
+docker run -d -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=*** postgres 
 ```
 #### Ligar à base de dados no heroku
 ```shell
