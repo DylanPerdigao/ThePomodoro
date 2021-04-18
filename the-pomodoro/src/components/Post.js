@@ -27,7 +27,7 @@ export default ( {id, name, description, image, rating, onClick} ) => {
             <div className="right">
                 <img className="postImg" alt="Recipe" src="logo512.png"></img>
                 <h3>LIKES</h3>
-                <LikeButton isFavorite={false}/>
+                <button id="favButton"><LikeButton isFavorite={false}/></button>
             </div>
         </button>
     );
