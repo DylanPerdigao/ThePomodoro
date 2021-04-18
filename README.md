@@ -13,7 +13,7 @@ psql -h ec2-54-247-158-179.eu-west-1.compute.amazonaws.com -p 5432 -d dadih75qcq
 ```
 #### Introduzir a password
 ```shell
-86acc7cb14978bd57697eaa59022eec26a08f1930662da86502de3e39fd30e0d
+***
 ```
 ### React
 ```
