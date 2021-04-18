@@ -29,12 +29,17 @@ export default () => {
         })
         .then(response => response.json())
         .then(result => {
+            if (result.message){
+                alert(result.message);
+            }
+            
             localStorage.setItem("token", result.token);
             localStorage.setItem("logged", true);
             window.location.href = `/profile/${state.username}`
         })
         .catch(error => {
-            alert(error.message);
+            //console.log(error.json())
+            alert('Unable to reach API.');
             //console.log(error);
         });
 

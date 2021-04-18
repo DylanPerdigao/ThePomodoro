@@ -1,7 +1,9 @@
 import '../styles/Post.css';
+import star from '../images/star.svg' 
+import starFilled from '../images/star-filled.svg' 
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default ( {id, name, description, image, rating, onClick} ) => {
+export default ( {id, name, description, image, rating, author,  onClick} ) => {
 
     const LikeButton = (props) =>{
         if(props.isFavorite){
@@ -11,11 +13,11 @@ export default ( {id, name, description, image, rating, onClick} ) => {
     }
     
     function Favorite(props) {
-      return <img className="like" alt = "star filled" src="star-filled.svg"></img>;
+      return <img className="like" alt = "star filled" src={starFilled}></img>;
     }
     
     function NotFavorite(props) {
-      return <img className="like" alt = "star" src="star.svg"></img>;
+      return <img className="like" alt = "star" src={star}></img>;
     }
 
     return (
@@ -24,7 +26,7 @@ export default ( {id, name, description, image, rating, onClick} ) => {
                 <h1>{name}</h1>
                 <h2>Description:</h2>
                 <p>{description}</p>
-                <h3>AUTHOR</h3>
+                <h3>AUTHOR: {author}</h3>
             </div>
             <div className="right">
                 <img className="postImg" alt="Recipe" src="logo512.png"></img>
