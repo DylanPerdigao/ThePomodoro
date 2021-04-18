@@ -29,9 +29,15 @@ export default () => {
         })
         .then(response => response.json())
         .then(result => {
-            localStorage.setItem("token", result.token);
-            localStorage.setItem("logged", true);
-            window.location.href = `/profile/${state.username}`
+            if(result.message==="Token is invalid" || result.message==="Token is missing!"){
+                localStorage.setItem("username", "");
+                localStorage.setItem("logged", false);
+            }else{
+                localStorage.setItem("token", result.token);
+                localStorage.setItem("logged", true);
+                localStorage.setItem("username", state.username);
+                window.location.href = `/profile/${state.username}`
+            }
         })
         .catch(error => {
             alert(error.message);

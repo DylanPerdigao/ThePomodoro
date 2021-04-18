@@ -71,6 +71,7 @@ export default () => {
                     })
                     .then(response => response.json())
                     .then(result => {
+                        localStorage.setItem("username", state.username);
                         localStorage.setItem("token", result.token);
                         localStorage.setItem("logged", true);
                     })
@@ -81,6 +82,9 @@ export default () => {
                     window.location.href='/';
                 }else if(result.message==="Username already exists"){
                     alert("O utilizador já existe");
+                }else if(result.message==="Token is invalid" || result.message==="Token is missing!"){
+                    localStorage.setItem("username", "");
+                    localStorage.setItem("logged", false);
                 }else{
                     alert("Preencha todos os campos corretamente");
                 }
