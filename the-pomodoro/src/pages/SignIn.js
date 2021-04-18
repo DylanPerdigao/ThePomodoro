@@ -29,6 +29,7 @@ export default () => {
         .then(response => response.json())
         .then(result => {
             localStorage.setItem("token", result.token);
+            window.location.href = `/profile/${state.username}`
         })
         .catch(error => {
             alert('Unable to reach API.');

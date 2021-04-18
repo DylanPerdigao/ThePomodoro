@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 import Post from '../../components/Post'
 
 import './Profile.css';
@@ -5,67 +7,95 @@ import './Profile.css';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
 
-    const resp = {
-        "bio": "",
-        "id": 1,
-        "image": "",
-        "name": "teste testinho",
-        "recipes": [
-            {
-                "id": 8,
-                "image": "",
-                "name": "Pão com fiambre",
-                "description": "Yah bro... é só um pão com fiambre",
-                "post_date": "04/17/2021, 04:22:21",
-                "rating": 0.0
-            },
-            {
-                "id": 9,
-                "image": "",
-                "name": "Pão sem fiambre",
-                "description": "Mano... juro... Este pão com fambre é diferente... Juro pela minha morte Joca",
-                "post_date": "04/17/2021, 12:55:11",
-                "rating": 0.0
-            }
-        ],
-        "username": "teste"
-    };
+    const [state, setState] = useState ({
+        loading: true,
+        error: false,
+        name: ""
+    });
 
-    const myRecipes = resp["recipes"];
+    let myRecipesComponents;
 
-    const myRecipesComponents = myRecipes.map( p => (
-        <Post 
-            id={p.id}
-            name={p.name}
-            description={p.description}
-            image={p.image}
-            rating= {p.rating}
+    let { username } = useParams();
 
-            onClick = { () => {window.location.href=`/recipe/${p.id}`;}}
-        />
-   ));
+    useEffect(() => {
+        if (state.loading === true && state.error === false) {
+        
+            fetch('http://127.0.0.1:5000/user', {
+                method: 'GET',
+                redirect: 'follow',
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body:{
+                    "username" : {username},
+                    "ini" : "0",
+                    "fim" : "7",
+                }
+            })
+            .then(response => response.json())
+            .then(resp => {
+                console.log(resp);
+                
+                const myRecipes = resp["recipes"];
+
+                // eslint-disable-next-line react-hooks/exhaustive-deps
+                myRecipesComponents = myRecipes.map( p => (
+                    <Post 
+                        id={p.id}
+                        name={p.name}
+                        description={p.description}
+                        image={p.image}
+                        rating= {p.rating}
+
+                        onClick = { () => {window.location.href=`/recipe/${p.id}`;}}
+                    />
+                ));
+                
+                setState({
+                    loading: false,
+                    error: false,
+                    name: resp.name
+                })
+
+            })
+            .catch(error => {
+                console.log(error);
+                setState({
+                    loading: false,
+                    error: true,
+                    name: ""
+                })
+            });
+        }
+    });
+    
 
     return (
         <div id="profile">
-            <div id="inner">
-                <h1>{resp.name}</h1>
+            {state.loading ? (<p>loading...</p>
+            ) : state.error ? (<h1>AN ERROR HAS OCURRED!</h1>
+            ) : (
+                <div id="inner">
+                    <h1>{state.name}</h1>
 
-                <button>Follow</button>
-                <button>Unfollow</button>
-                
+                    <button>Follow</button>
+                    <button>Unfollow</button>
+                    
 
-                <h2>Minhas Receitas</h2>
-                <div className="myRecipes">
-                    {myRecipesComponents}
+                    <h2>Minhas Receitas</h2>
+                    <div className="myRecipes">
+                        {myRecipesComponents}
+                    </div>
+                    
+
+                    <h2>Minhas Receitas</h2>
+                    <div className="favRecipes">
+                        <Post />
+                    </div>
+
                 </div>
-                
-
-                <h2>Minhas Receitas</h2>
-                <div className="favRecipes">
-                    <Post />
-                </div>
-
-            </div>
+            )}
         </div>
     );
+
 };
