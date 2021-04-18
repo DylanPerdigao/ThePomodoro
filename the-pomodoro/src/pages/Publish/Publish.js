@@ -83,6 +83,9 @@ export default () => {
         .then(result => {
             if(result.message==="sucess"){
                 window.location.href='/';
+            }else if(result.message==="Token is invalid" || result.message==="Token is missing!"){
+                localStorage.setItem("username", "");
+                localStorage.setItem("logged", false);
             }else{
                 alert("Preencha todos os campos corretamente")
             }}

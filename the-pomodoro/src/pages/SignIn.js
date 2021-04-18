@@ -35,6 +35,7 @@ export default () => {
             
             localStorage.setItem("token", result.token);
             localStorage.setItem("logged", true);
+            localStorage.setItem("username", state.username);
             window.location.href = `/profile/${state.username}`
         })
         .catch(error => {
