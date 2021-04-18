@@ -32,10 +32,26 @@ export default () => {
 
     function addIngredient(e){
         e.preventDefault();
-        if(state.name != undefined && state.quantity != undefined && state.unit != undefined){
+        document.getElementById("ingredientName").style.background="white";
+        document.getElementById("ingredientQuantity").style.background="white";
+        document.getElementById("ingredientUnit").style.background="white";
+        var validInputs=3;
+        if(!state.name || !Number.isNaN(parseFloat(state.name))){
+            document.getElementById("ingredientName").style.background="pink";
+            validInputs--;
+        }
+        if(!state.quantity || Number.isNaN(parseFloat(state.quantity))){
+            document.getElementById("ingredientQuantity").style.background="pink";
+            validInputs--;
+        }
+        if (!state.unit || !Number.isNaN(parseFloat(state.unit))){
+            document.getElementById("ingredientUnit").style.background="pink";
+            validInputs--;
+        }
+        if(validInputs==3){
             ingredients.push({
                 "name": state.name,
-                "quantity": state.quantity,
+                "quantity": parseFloat(state.quantity.replace(',','.')),
                 "unit": state.unit
             });
             resetInputs();
